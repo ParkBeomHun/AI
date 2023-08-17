@@ -165,4 +165,4 @@ img = imread('drogba.jpg')
 plt.imshow(img)
 plt.show()
 
-##바꾸자
+##바꾸자dsadsad
