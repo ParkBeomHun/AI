@@ -159,8 +159,8 @@ plt.title("sin & cos")
 plt.legend()
 plt.show()
 
-import matplotlib.pyplot as plt
 from matplotlib.image import imread
+
 img = imread('drogba.jpg')
 plt.imshow(img)
 plt.show()
