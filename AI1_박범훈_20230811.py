@@ -164,3 +164,5 @@ from matplotlib.image import imread
 img = imread('drogba.jpg')
 plt.imshow(img)
 plt.show()
+
+##바꾸자
