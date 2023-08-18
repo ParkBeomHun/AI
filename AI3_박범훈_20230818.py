@@ -66,3 +66,6 @@ print(A_1d.shape[0])   # 해당 차원의 갯수를 반환
 
 print(np.ndim(A_2d))   # n차원 dimension
 print(A_2d.shape[0])   # shape[0] : 1차원 갯수 반환 -> 2 / shpae[1] : 2차원 갯수 반환 -> 4
+                       # 4x3x2x7 배열 = shape[0] : 4 / shape[1] : 3 / shape[2] : 2 / shape[3] : 7
+
+print("=====================")
