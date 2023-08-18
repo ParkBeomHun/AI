@@ -69,3 +69,88 @@ print(A_2d.shape[0])   # shape[0] : 1차원 갯수 반환 -> 2 / shpae[1] : 2차
                        # 4x3x2x7 배열 = shape[0] : 4 / shape[1] : 3 / shape[2] : 2 / shape[3] : 7
 
 print("=====================")
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.dot(A,B))  # 행렬의 곱 
+print(A*B)          # 행렬의 같은 위치의 원소끼리의 곱
+
+A = np.array([[1,2,3],[4,5,6]])
+B = np.array([[1,2],[3,4],[5,6]])
+print(np.dot(A,B))
+
+print("=====================")
+
+X = np.array([[1,2],[3,4],[5,6]])
+Y1 = np.array([1,2])
+Y2 = np.array([[1],[2]])
+print(np.dot(X,Y1))     # (3x2) x (1x2) = (1x3)
+print(np.dot(X,Y2))     # (3x2) x (2x1) = (3x1)
+
+print("=====================")
+
+x = np.array([1,2])
+w = np.array([[1,3,5],[2,4,6]])
+print(np.dot(x,w))
+
+
+print("=========3층 신경망 구현 ============")
+def identity_function(x):
+    return x
+
+x = np.array([1.0, 0.5])
+w1 = np.array([[0.1, 0.3, 0.5],[0.2,0.4,0.6]])
+b1 = np.array([0.1, 0.2, 0.3])
+w2 = np.array([[0.1, 0.4],[0.2, 0.5],[0.3, 0.6]])
+b2 = np.array([0.1, 0.2])
+w3 = np.array([[0.1,0.3],[0.2,0.4]])
+b3 = np.array([0.1, 0.2])
+
+a1 = np.dot(x,w1)+b1
+z1 = sigmoid(a1)
+
+a2 = np.dot(z1,w2)+b2
+z2 = sigmoid(a2)
+
+a3 = np.dot(z2,w3)+b3
+z3 = identity_function(a3)
+
+y = z3
+print(y)
+
+
+print("=============소프트맥스함수==============")
+
+a= np.array([0.3, 2.9, 4.0])
+exp_a = np.exp(a)
+sum_exp_a = np.sum(exp_a)
+
+y = exp_a/sum_exp_a
+print(y)
+
+def softmax(a):
+    exp_a = np.exp(a)
+    sum_exp_a = np.sum(exp_a)
+
+    return exp_a / sum_exp_a
+
+print(softmax(a))
+
+
+print("======================================")
+
+a = np.array([1010,1000,990])
+print(np.exp(a)) # inf inf inf 로 출력됨 -> 숫자가 너무 커서 안됨
+max_a = np.max(a)
+sum_exp_a = np.sum(a)
+y= (a - max_a)/sum_exp_a
+print(y)
+
+a= np.array([0.3, 2.9, 4.0])
+y = softmax(a)
+print(y)
+    
+import sys, os
+sys.path.append(os.pardir)
+from dataset.mnist import load_mnist
