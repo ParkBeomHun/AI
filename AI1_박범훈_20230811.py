@@ -102,7 +102,7 @@ p = np.array([
     ]
     ])
 print(p)
-
+print(p.shape[2])   #3x3x3 이라서 shape[0] : 3 / shape[1] : 3 / shape[2] : 3
 
 A = np.array([
     [1,2],[3,4]
